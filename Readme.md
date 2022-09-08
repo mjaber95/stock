@@ -24,7 +24,7 @@ On your machine:
 4. Run the app: `python app.py` 
 5. Test the endpoint in a separated shell `curl http://localhost:8080/`
 
-If ou get this message: 
+If you get this message: 
 ```
 Hello you should use an other route:!
 EX: get_stock_val/<ticker>
