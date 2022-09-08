@@ -8,12 +8,12 @@ The objectives of the project is to develop an end to end solution to predict st
 Prerequisites:
 - [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/) installed
 - [Docker](https://docs.docker.com/get-docker/) installed
- 
+
 
 ## Setup steps
 On your Google GCP account:
 1. [Create your project](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
-2. [Get the credentials (json)](https://cloud.google.com/docs/authentication/getting-started) and S=set up the environment variable `GOOGLE_APPLICATION_CREDENTIALS`
+2. [Get the credentials (json)](https://cloud.google.com/docs/authentication/getting-started) and set up the environment variable `GOOGLE_APPLICATION_CREDENTIALS`
 3. Hook your github repo to google build. Allow the trigger for each push.
 
 
