@@ -1,5 +1,5 @@
 from flask import Flask
-
+import git
 from src.business_logic.process_query import create_business_logic
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello():
-    return f'Hello dear Isaque, you should use a better route:!\nEX: get_stock_val/<ticker>\n'
+    return f'Hello dear students, you should use a better route:!\nEX: get_stock_val/<ticker>\n'
 
 
 @app.route('/get_stock_val/<ticker>', methods=['GET'])
@@ -16,6 +16,14 @@ def get_stock_value(ticker):
     prediction = bl.do_predictions_for(ticker)
 
     return f'{prediction}\n'
+
+
+@app.route('/getversion/')
+def getversion():
+    repo = git.Repo(search_parent_directories=True)
+    sha = repo.head.object.hexsha
+
+    return f'{sha}\n'
 
 
 if __name__ == '__main__':
