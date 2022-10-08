@@ -1,5 +1,5 @@
 #for local testing, you can build and run your docker image locally
-#test for trigger
+
 docker build . -f Dockerfile -t my_image
 
 #to run the docker image:
