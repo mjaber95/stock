@@ -28,7 +28,7 @@ class Stock_model(BaseEstimator, TransformerMixin):
     def __init__(self, data_fetcher):
         self.log = logging.getLogger()
         self.lr = LinearRegression()
-        self._ata_fetcher = data_fetcher
+        self.data_fetcher = data_fetcher
         self.log.warning('here')
 
     def fit(self, X, Y=None):
