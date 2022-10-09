@@ -26,8 +26,8 @@ class BusinessLogic:
         return self._config['DEFAULT']['version']
 
     def get_bucket_name(self):
-        # return f'{self._root_bucket}_{self.get_version().replace(".", "")}'
-        return f'{self._root_bucket}'
+        return f'{self._root_bucket}_{self.get_version().replace(".", "")}'
+        # return f'{self._root_bucket}'
 
     def _get_or_create_model(self, ticker):
         log = logging.getLogger()
