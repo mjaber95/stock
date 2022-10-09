@@ -28,11 +28,11 @@ class Stock_model(BaseEstimator, TransformerMixin):
     def __init__(self, data_fetcher):
         self.log = logging.getLogger()
         self.lr = LinearRegression()
-        self._data_fetcher = data_fetcher
+        self._ata_fetcher = data_fetcher
         self.log.warning('here')
 
     def fit(self, X, Y=None):
-        data = self._data_fetcher(X)
+        data = self.data_fetcher(X)
         df_features = create_features(data)
         df_features, Y = create_X_Y(df_features)
         self.lr.fit(df_features, Y)
@@ -40,7 +40,7 @@ class Stock_model(BaseEstimator, TransformerMixin):
 
     def predict(self, X, Y=None):
         print(X)
-        data = self._data_fetcher(X, last=True)
+        data = self.data_fetcher(X, last=True)
         print(data)
         df_features = create_features(data)
         print(df_features)
