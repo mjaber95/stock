@@ -5,7 +5,7 @@ import joblib
 
 from src.IO.get_data_from_yahoo import get_last_stock_price
 from src.IO.storage_tools import create_bucket, get_model_from_bucket, upload_file_to_bucket
-from src.algo.dummy_model import Stock_model
+from src.algo.baseline_model import Stock_model
 
 
 def create_business_logic():
@@ -48,6 +48,7 @@ class BusinessLogic:
         create_bucket(self.get_bucket_name())
 
     def do_predictions_for(self, ticker):
-        model = self._get_or_create_model(ticker)
+        # model = self._get_or_create_model(ticker)
+        model = self._model_creator.fit(ticker)
         predictions = model.predict(ticker)
         return predictions

@@ -15,7 +15,13 @@ def get_stock_value(ticker):
     bl = create_business_logic()
     prediction = bl.do_predictions_for(ticker)
 
-    return f'{prediction}\n'
+    if prediction < 0:
+        return f'The price of {ticker} is going to decrease by {prediction*-1: .2f}.\n You should sell {ticker} stock.'
+
+    if prediction > 0:
+        return f'The price of {ticker} is going to increase by {prediction: .2f}.\n You should buy {ticker} stock.'
+
+    # return f'{prediction}\n'
 
 
 @app.route('/getversion/')
