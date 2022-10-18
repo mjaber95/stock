@@ -52,3 +52,8 @@ class BusinessLogic:
         model = self._model_creator.fit(ticker)
         predictions = model.predict(ticker)
         return predictions
+
+    def get_accuracy(self, ticker):
+        model = self._model_creator.fit(ticker)
+        accuracy = model.score(ticker)
+        return accuracy
