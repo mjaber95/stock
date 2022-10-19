@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello():
-    return f'Hello fellow investor! Use  "/get_stock_val/" or "/get_stock_change" to check the stock value for tomorrow.'
+    return f'Hello fellow investor! Use "/get_stock_val/" or "/get_stock_change" to check the stock value for tomorrow.'
 
 
 @app.route('/get_stock_change/<ticker>', methods=['GET'])
