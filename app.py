@@ -16,10 +16,10 @@ def get_stock_change(ticker):
     prediction = bl.do_predictions_for(ticker)[0]
 
     if prediction < 0:
-        return f'The price of {ticker} is going to decrease by {prediction*-1: .2f}.\n You should sell {ticker} stock.'
+        return f'Sell'
 
     if prediction > 0:
-        return f'The price of {ticker} is going to increase by {prediction: .2f}.\n You should buy {ticker} stock.'
+        return f'Buy'
 
 @app.route('/get_stock_val/<ticker>', methods=['GET'])
 def get_stock_value(ticker):
